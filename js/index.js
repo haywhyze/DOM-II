@@ -6,6 +6,9 @@ const navLink = document.querySelectorAll('.nav-link');
 const body = document.querySelector('body');
 const scrollToTop = document.querySelector('#scroll-to-top');
 const wheelInfo = document.querySelector('#wheel-info');
+const loader = document.querySelector('.loader');
+const home = document.querySelector('.home');
+const images = document.querySelectorAll('img');
 
 navLink.forEach(e => eventListener(e, 'mouseover', () => {
   e.classList.add('red');
@@ -32,3 +35,14 @@ eventListener(document, 'wheel', e => {
   setTimeout(() => wheelInfo.style.display = 'none', 2000);
 }, {passive: false})
 
+eventListener(window, 'load', e => {
+  home.style.display = 'none';
+  loader.style.display = 'block';
+  setTimeout(() => home.style.display = 'block', 1000)
+  setTimeout(() => loader.style.display = 'none', 1000)
+})
+
+images.forEach(e => eventListener(e, 'dblclick', () => {
+  console.log('object')
+  e.classList.toggle('increaseWidth');
+}))
