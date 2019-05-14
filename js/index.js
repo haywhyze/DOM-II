@@ -52,3 +52,7 @@ images.forEach(e => eventListener(e, 'dblclick', () => {
 button.forEach(e => eventListener(e, 'click', () => {
   e.classList.toggle('remove-border-radius');
 }))
+
+eventListener(window, 'resize', () => {
+  body.classList.toggle('background-color');
+})

@@ -386,6 +386,9 @@ img {
 .remove-border-radius {
   border-radius: 0 !important;
 }
+.background-color {
+  background-color: #ddd;
+}
 .increaseWidth {
   max-width: 120% !important;
 }
