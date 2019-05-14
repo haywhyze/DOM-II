@@ -353,3 +353,16 @@ img {
 .red {
   color: red !important;
 }
+#scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  transition: all 20s;
+  right: 0;
+  padding: 1rem 2rem;
+  background-color: #17A2B8;
+  color: #FFFFFF;
+  display: none;
+}
+#scroll-to-top p {
+  padding: 0;
+}
