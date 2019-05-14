@@ -9,6 +9,7 @@ const wheelInfo = document.querySelector('#wheel-info');
 const loader = document.querySelector('.loader');
 const home = document.querySelector('.home');
 const images = document.querySelectorAll('img');
+const button = document.querySelectorAll('.btn');
 
 navLink.forEach(e => eventListener(e, 'mouseover', () => {
   e.classList.add('red');
@@ -19,21 +20,23 @@ navLink.forEach(e => eventListener(e, 'mouseout', () => {
 }))
 
 eventListener(body, 'keydown', (e) => {
-  if(e.key === 'Enter'){
+  if (e.key === 'Enter') {
     e.preventDefault();
-    location.href='#';
+    location.href = '#';
   }
 })
 
 eventListener(window, 'scroll', e => {
-  window.scrollY > 200 ? scrollToTop.style.display = 'block': scrollToTop.style.display = 'none';
+  window.scrollY > 200 ? scrollToTop.style.display = 'block' : scrollToTop.style.display = 'none';
 })
 
 eventListener(document, 'wheel', e => {
   e.preventDefault();
   wheelInfo.style.display = 'block';
   setTimeout(() => wheelInfo.style.display = 'none', 2000);
-}, {passive: false})
+}, {
+  passive: false
+})
 
 eventListener(window, 'load', e => {
   home.style.display = 'none';
@@ -43,6 +46,9 @@ eventListener(window, 'load', e => {
 })
 
 images.forEach(e => eventListener(e, 'dblclick', () => {
-  console.log('object')
   e.classList.toggle('increaseWidth');
+}))
+
+button.forEach(e => eventListener(e, 'click', () => {
+  e.classList.toggle('remove-border-radius');
 }))

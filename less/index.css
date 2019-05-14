@@ -383,6 +383,9 @@ img {
   text-align: center;
   padding: 0;
 }
+.remove-border-radius {
+  border-radius: 0 !important;
+}
 .increaseWidth {
   max-width: 120% !important;
 }
