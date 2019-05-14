@@ -15,7 +15,6 @@ navLink.forEach(e => eventListener(e, 'mouseout', () => {
 }))
 
 eventListener(body, 'keydown', (e) => {
-  console.log(e.key)
   if(e.key === 'ArrowUp'){
     e.preventDefault();
     location.href='#';
@@ -23,9 +22,6 @@ eventListener(body, 'keydown', (e) => {
 })
 
 eventListener(window, 'scroll', e => {
-  if (window.scrollY > 100) {
-    scrollToTop.style.display = 'block';
-  } else 
-
-  window.scrollY > 100 ? scrollToTop.style.display = 'block': scrollToTop.style.display = 'none';
+  window.scrollY > 200 ? scrollToTop.style.display = 'block': scrollToTop.style.display = 'none';
 })
+
