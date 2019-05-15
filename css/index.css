@@ -392,6 +392,11 @@ img {
 .increaseWidth {
   max-width: 120% !important;
 }
+input {
+  padding: 1rem;
+  border: 1px dashed #17A2B8;
+  width: 40%;
+}
 .loader {
   position: fixed;
   border: 16px solid #f3f3f3;
