@@ -12,3 +12,83 @@
 
 // Page Specific
 @import 'home-page.less';
+
+.red {
+  color: red !important;
+}
+
+#scroll-to-top {
+  position: fixed;
+  bottom: 0;
+  transition: all 20s;
+  right: 0;
+  padding: 1rem 2rem;
+  background-color: @button-bg;
+  color: @main-bg;
+  display: none;
+  z-index: 10;
+
+  p {
+    padding: 0;
+  }
+}
+
+#wheel-info {
+  position: fixed;
+  display: inline-block;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 1rem 2rem;
+  background-color: @button-bg;
+  color: @main-bg;
+  font-size: 250%;
+  display: none;
+
+  p {
+    text-align: center;
+    padding: 0;
+  }
+
+}
+
+.remove-border-radius {
+  border-radius: 0 !important;
+}
+
+.increase-border-radius {
+  border-radius: 50% !important;
+}
+
+.background-color {
+  background-color: #ddd;
+}
+
+.increaseWidth {
+  max-width: 120% !important;
+}
+
+input {
+  padding: 1rem;
+  border: 1px dashed @button-bg;
+  width: 40%;
+}
+
+.loader {
+  position: fixed;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  top: calc(50% - 60px);
+  left: calc(50% - 60px);
+  transform: translate(-50%, 0);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+// culled from w3schools https://www.w3schools.com/howto/howto_css_loader.asp

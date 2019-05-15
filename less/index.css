@@ -410,8 +410,8 @@ input {
   width: 120px;
   height: 120px;
   animation: spin 2s linear infinite;
-  top: calc(50% - 60px);
-  left: calc(50% - 60px);
+  top: calc(-10%);
+  left: calc(-10%);
   transform: translate(-50%, 0);
 }
 @keyframes spin {
