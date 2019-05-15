@@ -13,6 +13,7 @@ const button = document.querySelectorAll('.btn');
 const container = document.querySelector('.container.home');
 const input = document.createElement('input');
 const p1 = document.createElement('p');
+const destination = document.querySelectorAll('.destination');
 
 // 1. mouseover
 navLink.forEach(e => eventListener(e, 'mouseover', () => {
@@ -60,8 +61,10 @@ images.forEach(e => eventListener(e, 'dblclick', () => {
 }))
 
 // 8. click
-button.forEach(e => eventListener(e, 'click', () => {
+button.forEach(e => eventListener(e, 'click', (event) => {
   e.classList.toggle('remove-border-radius');
+  // this stops the bubbling to get to the click event of the destination div on line 89
+  event.stopPropagation();
 }))
 
 // 9. resize
@@ -77,6 +80,17 @@ const logSelection = (event) => {
   const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
   p1.textContent = `You selected: ${selection}`;
 }
+
 // 10. select
 eventListener(input, 'select', logSelection);
 // inspired by https://developer.mozilla.org/en-US/docs/Web/API/Element/select_event
+
+// this is to override the click event of the btn class on line 64
+destination.forEach(e => eventListener(e, 'click', () => {
+  e.children[2].classList.toggle('increase-border-radius');
+}));
+
+// this stops the navlink from refreshing the page when clicked
+navLink.forEach(e => eventListener(e, 'click', (event) => {
+  event.preventDefault();
+}))
